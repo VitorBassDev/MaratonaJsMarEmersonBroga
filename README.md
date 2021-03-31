@@ -21,7 +21,12 @@
 
 
 ## Scripts
-
+  * Arquivo `seeds/import.js`
+  [ 
+    Conecta com o banco de dados
+    Recebe e trata erros de dados
+    Lê arquivo .json
+  ]
 
 
 ## Arquivos de Configurações
