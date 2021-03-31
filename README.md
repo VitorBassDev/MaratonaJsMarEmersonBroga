@@ -1,22 +1,17 @@
 # Aula 01
 
 
-## Ferramentas e Tecnologias
+## Building
 
-### Neste Projeto serão utilizadas as seguintes tecnologias:
+Building the Nuxeo Platform requires the following tools:
 
-- JavaScritp
+- Git (obviously)
 - Node
-- NPM
-
-- VSCode
-- Linux
-- ....
-
-## Bibliotecas
+- YARN
+- Dependencies
 
 
-## Scripts
+Dependencies:
 
 ```shell
 Express
