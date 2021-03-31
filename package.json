@@ -13,5 +13,9 @@
     "git"
   ],
   "author": "Vítor Guedes",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.12.3"
+  }
 }

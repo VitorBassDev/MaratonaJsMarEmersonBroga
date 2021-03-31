@@ -1,4 +1,4 @@
-# Aula 01
+# PROJETO XXXX
 
 
 ## Ferramentas e Tecnologias
@@ -15,8 +15,36 @@
 
 ## Bibliotecas
 
+[dotenv]
+[mongoose]
+
+
 
 ## Scripts
+
+
+
+## Arquivos de Configurações
+
+  ```shell
+    - `.env`
+  ```
+
+
+
+# APRENDIZADO
+
+## Fazer Leitura de Arquivos
+......
+
+## Configurar Banco de dados 
+  [x] Configuração do Banco de dados MongoDB no arquivo [`seeds/import.js`]
+
+......
+
+
+
+
 
 ```shell
 Express
