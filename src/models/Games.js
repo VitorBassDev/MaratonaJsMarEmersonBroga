@@ -1,4 +1,5 @@
 const {Schema, model} = require('mongoose')
+const { options } = require('../routes/games')
 
 const GameSchema = new Schema({
   title:{
@@ -52,5 +53,8 @@ module.exports = {
   store: (data) => {
     const game = new Game(data);
     return game.save()
-  }
+  },
+
+  update: (id, data, options = {new: true}) => {
+    return Game.findOneAndUpdate({_id: id }, data, options)}
 }

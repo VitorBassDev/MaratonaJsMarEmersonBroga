@@ -37,4 +37,16 @@ router.post('/', async (req, res) => {
   })
 })
 
+router.patch('/:id', async (req, res) => {
+
+  const {body, params} = req
+  const {id} = params;
+
+  const game = await Games.update(id, body)
+  console.log(id, body)
+  return res.json({
+    message: "Game Update",
+    data: game
+  })
+})
 module.exports = router
