@@ -5,15 +5,14 @@ const GameSchema = new Schema({
     type: String,
     required: true,
   },
-
-  otherTiltles: [String],
+  otherTitles: [String],
   developers: [String],
   publishers: [String],
-  genrers: [String],
+  genres: [String],
   firstReleased: Date,
   japanRelease: Date,
   usaRelease: Date,
-  auroRelease: Date,
+  euroRelease: Date,
 }, {
   collection: 'games',
   strict: false
@@ -34,7 +33,7 @@ module.exports = {
       const regex = new RegExp(`.*${q}.*`, 'i')
       const searchQuery = {$or: [ 
         {title: regex},
-        {otherTiltles: regex},
+        {otherTitles: regex},
         {publishers: regex},
         {developers: regex}
       ]}
