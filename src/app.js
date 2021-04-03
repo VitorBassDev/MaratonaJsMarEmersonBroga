@@ -2,7 +2,7 @@ require('dotenv/config');
 
 // INICIAR O EXPRESS
 const express     = require('express')
-
+const gamesRouter = require ('./routes/games')
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.get("/", (req, res) =>{
   })
 })
 
-
+app.use('/games', gamesRouter)
 
 // INICIAR O SERVIDOR
 app.listen(process.env.SERVER_PORT, () => {
