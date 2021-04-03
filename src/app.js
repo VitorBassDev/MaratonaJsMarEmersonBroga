@@ -2,9 +2,12 @@ require('dotenv/config');
 
 // INICIAR O EXPRESS
 const express     = require('express')
+
+const conect      = require('./models/index')
 const gamesRouter = require ('./routes/games')
 
 const app = express();
+conect()
 
 // RECEBER DADOS EM JSON
 app.use(express.json())

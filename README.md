@@ -31,7 +31,9 @@
     Lê arquivo `.json` que contém os jogos
     [readGamesFromFile]
   
-
+## Configurar Banco de dados 
+  [x] Configuração do Banco de dados MongoDB no arquivo [`seeds/import.js`]
+  [x] Configuração do Banco de dados MongoDB no arquivo [`models/index.js`]
 
 ## Arquivos de Configurações
 
@@ -41,15 +43,14 @@
     - `.env`
   ```
 
-
-
 # APRENDIZADO
 
 ## Fazer Leitura de Arquivos
 ......
 
-## Configurar Banco de dados 
-  [x] Configuração do Banco de dados MongoDB no arquivo [`seeds/import.js`]
+## PAGINAÇÃO DA PESQUISA NO BANCO DE DADOS
+## LIMITAÇAO DO QUANTITATIVO DOS RESULTADOS DAS PESQUISAS
+## ORDENAÇÃO POR CRESCENTE OU DECRESCENTE
 
 ......
 
