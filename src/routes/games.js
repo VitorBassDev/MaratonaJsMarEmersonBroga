@@ -49,4 +49,17 @@ router.patch('/:id', async (req, res) => {
     data: game
   })
 })
+
+router.delete('/:id', async (req, res) =>{
+  const {params} = req
+  const {id}     = params
+
+  const result   = await Games.destroy(id)
+
+  return res.json({
+    message: "Game Deleted",
+    data: result
+  })
+})
+
 module.exports = router
