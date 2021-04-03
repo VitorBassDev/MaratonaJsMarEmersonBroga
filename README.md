@@ -22,11 +22,14 @@
 
 ## Scripts
   * Arquivo `seeds/import.js`
-  [ 
+  
     Conecta com o banco de dados
+    [connecToDB]
     Recebe e trata erros de dados
-    Lê arquivo .json
-  ]
+    
+    Lê arquivo `.json` que contém os jogos
+    [readGamesFromFile]
+  
 
 
 ## Arquivos de Configurações

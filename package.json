@@ -4,6 +4,7 @@
   "description": "API | Maratona JS de MAR | Emerson Broga",
   "main": "index.js",
   "scripts": {
+    "dev": "node seeds/import.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

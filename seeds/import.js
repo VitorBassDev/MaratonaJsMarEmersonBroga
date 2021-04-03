@@ -10,14 +10,16 @@ const dotenv  = require('dotenv')
 
 // --- FACILITA O ACESSO AO MONGODB
 const {Schema, model, connect} = require('mongoose');
-const { resolve } = require('path');
-const { rejects } = require('assert');
 
 // LER CONFIGURAÇÕES DO ARQUIVO .DOTENV
 dotenv.config();
 
 // BANCO DE DADOS
-const GameSchema = new Schema()
+const GameSchema = new Schema(
+  {title: String},
+  {strict: false}
+)
+const Game = model('Game', GameSchema)
 
 /**
  * RECEBER E TRATAR OS DADOS .JSON
@@ -39,7 +41,7 @@ const connectToDB = () => {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: true
+    useFindAndModify: false
   }
   return connect (process.env.DATABASE, options)
 }
@@ -61,22 +63,29 @@ const readGamesFromFile = (filename => {// Conectar com o banco de dados
 })
 
 /**
- * LOOP ENTRE CADA UM DOS ITENS
+ * IMPORTAR AS INFORMAÇÕES DO ARQUIVO PARA O BANCO DE DADOS
  */
-const importGames = async () => {
-  const games = await readGamesFromFile('games.json')
-  for(let i = 0; i < games.length; i++){
-    const game = games[i]
-    console.log(game.title)
-  }
+ const storeGame = (data) => {
+  const game = new Game(data)
+  return game.save()
 }
 
 /**
- * IMPORTAR AS INFORMAÇÕES DO ARQUIVO PARA O BANCO DE DADOS
+ * LOOP ENTRE CADA UM DOS ITENS
  */
-const storeGame = (data) => {
+const importGames = async () => {
 
+  await connectToDB()
+
+  const games = await readGamesFromFile('games.json')
+
+  for(let i = 0; i < games.length; i++){
+    const game = games[i]
+    await storeGame(game)
+    console.log(game.title)
+  }
+
+  process.exit()
 }
-
 
 importGames()
