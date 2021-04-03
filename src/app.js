@@ -2,15 +2,19 @@ require('dotenv/config');
 
 // INICIAR O EXPRESS
 const express     = require('express')
+const cookieParser= require('cookie-parser');
 
 const conect      = require('./models/index')
 const gamesRouter = require ('./routes/games')
 
 const app = express();
-conect()
 
 // RECEBER DADOS EM JSON
 app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+app.use(cookieParser())
+
+conect()
 
 app.get("/", (req, res) =>{
   return res.json({

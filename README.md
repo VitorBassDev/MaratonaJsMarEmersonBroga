@@ -18,7 +18,8 @@
 [dotenv]
 [mongoose]
 [Express]
-
+[Nodemon]
+[cookie-parser]
 
 
 ## Scripts
