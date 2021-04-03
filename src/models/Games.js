@@ -49,4 +49,8 @@ module.exports = {
     
     return query.exec()
   },
+  store: (data) => {
+    const game = new Game(data);
+    return game.save()
+  }
 }
